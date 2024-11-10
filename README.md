@@ -52,7 +52,7 @@ sudo apt install gnuplot
 ```
 ### run the gnuplot script 
 ```
-gnuplot gnuplot.gp
+gnuplot -e "output=big_matrix.eps' ; input='data/full_data.tsv' "  gnuplot.gp
 ```
 In my case gnuplot is taking more memory so i have implemented this code with matplotlib as well
 run the python code
