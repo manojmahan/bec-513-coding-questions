@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap
+import sys
 
-data = pd.read_csv("data/full_data.tsv", sep="\t")
+data = pd.read_csv(sys.argv[1], sep="\t")
 
 # Create the heatmap
 plt.figure(figsize=(2,5))  # Adjust figure size as needed
@@ -16,4 +17,4 @@ plt.imshow(data, cmap=cmap, interpolation='nearest', aspect='auto')
 
 plt.gca().invert_yaxis()
 
-plt.savefig("x.jpeg")
+plt.savefig("outputs/big_matrix_plot_using_matplotlib.jpeg")
