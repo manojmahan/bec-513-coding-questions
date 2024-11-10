@@ -55,7 +55,7 @@ zcat data/big_data.tsv.gz | cut --complement -f1 > data/full_data.tsv
 sudo apt install gnuplot
 ```
 ### run the gnuplot script 
-before running this code was tested on 1k rows heatmap, output of 1k rows heatmap is in outputs directory 
+before running this code was tested on 1k rows heatmap, output of 1k rows heatmap is in outputs directory (named as onek_data_matrix.pdf)
 ```
 gnuplot -e "output='outputs/big_matrix.eps' ; input='data/full_data.tsv' "  gnuplot.gp
 ```
