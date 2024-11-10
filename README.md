@@ -16,13 +16,16 @@ zcat data/q1_data.tsv.gz | awk 'NR==1||/ENSG/'  | python question1.py data/to_se
 
 ## Q2: Plotting a group of lines ( R + Linux Command)
 Rscript will plot the lines based on the different clusters
-
+It will read the data form stdin and plot by using ggplot
 ```
 cat data/q2_data.tsv | Rscript question2.R "outputs/different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile" 
 ```
 
 ## Q3 Merge multiple files (R + Linux Command)
-Code will read all the input file and perform the inner join based on the 1st column( we assume that 1st column will be the primary key to perform join)
+Code will read all the input files and perform the inner join based on the 1st column( we assume that 1st column will be the primary key to perform join)
+Except for 1st column, other column names were random and 1st column name was set to "key" so that we could perform join on a key.
+here we are performing inner join means output data will have the common keys value(intersection of all the files)
+code requirement is that every file must have key as the 1st column.
 ```
 Rscript join_list_of_files.R data/list_q3.tsv outputs/join_output.tsv
 ```
@@ -30,6 +33,7 @@ Rscript join_list_of_files.R data/list_q3.tsv outputs/join_output.tsv
 ## Q4: Label with quantiles (Python)
 
 python code will split the data based on the number of quantiles and assign the quantile with its range to each number in the input(first_hundred_numbers.tsv)
+it wll get the quantile range with the help of qcut fromm pandas library
 ```
 cat data/first_hundred_numbers.tsv | python group_in_quantiles.py 4 > outputs/question4.tsv
 ```
