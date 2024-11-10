@@ -57,6 +57,6 @@ gnuplot -e "output=big_matrix.eps' ; input='data/full_data.tsv' "  gnuplot.gp
 In my case gnuplot is taking more memory so i have implemented this code with matplotlib as well
 run the python code
 ```
-python plot.py
+python plot.py 'data/full_data.tsv'
 ```
 
