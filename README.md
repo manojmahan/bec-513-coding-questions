@@ -56,8 +56,18 @@ sudo apt install gnuplot
 ```
 ### run the gnuplot script 
 ```
-gnuplot -e "output=big_matrix.eps' ; input='data/full_data.tsv' "  gnuplot.gp
+gnuplot -e "output='outputs/big_matrix.eps' ; input='data/full_data.tsv' "  gnuplot.gp
 ```
+
+### install ghostscript to use ps2pdf 
+```
+sudo apt install ghostscript
+```
+### convert big_matrix.eps to pdf
+```
+ps2pdf outputs/big_matrix.eps outputs/big_matrix.pdf
+```
+
 In my case gnuplot is taking more memory so i have implemented this code with matplotlib as well
 run the python code
 ```
